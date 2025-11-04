@@ -3,7 +3,11 @@
 @import "tailwindcss";
 
 body{
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-body);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
 }
 
 @layer base{
@@ -12,6 +16,54 @@ body{
         --color-fuchsia-400: #e879f9;
         --color-amber-300: #fcd34d;
         --color-teal-300: #5eead4;
-        --color-gray-950: #262626;
+        --color-gray-950: #111827;
+        --font-heading: 'Sora', sans-serif;
+        --font-body: 'Space Grotesk', sans-serif;
+        --gap-18: 4.5rem;
+        --inset-18: 4.5rem;
+        --height-18: 4.5rem;
+        --padding-18: 4.5rem;
+        --rotate-135: 135deg;
+        --rotate-225: 225deg;
+        --rotate-270: 270deg;
+        --rotate-315: 315deg;
     }
+}
+
+@layer utilities{
+
+    .cursor-blink {
+        animation: cursor-blink 1s step-start infinite;
+    }
+
+    @keyframes cursor-blink {
+        0% {
+            opacity: 1;
+        }
+        50%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+    @custom-media --sm (min-width: 640px);
+    @custom-media --md (min-width: 768px);
+    @custom-media --lg (min-width: 1200px);
+
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (--lg) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+ }
 }
