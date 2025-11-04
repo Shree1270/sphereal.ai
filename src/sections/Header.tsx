@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, type ButtonProps } from "../components/Button";
 import { twMerge } from "tailwind-merge";
+import { Orbit } from "../components/Orbit";
 
 export const navItems = [
   {
@@ -39,7 +40,7 @@ export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <>
-      <header className="border-b border-gray-200/20  z-40">
+      <header className="border-b border-gray-200/20 relative z-40">
         <div className="container">
           <div className="h-18 lg:h-20 flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -73,13 +74,13 @@ export const Header = () => {
               onClick={()=> setIsMobileMenuOpen((prev ) => !prev)}
               >
                 <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className={twMerge("w-4 h-0.5 bg-gray-100 -translate-y-1",
+                  <div className={twMerge("w-4 h-0.5 bg-gray-100 -translate-y-1 transition duration-300",
                     isMobileMenuOpen && "translate-y-0 rotate-45"
                   )} />
                 </div>
 
                 <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className={twMerge("w-4 h-0.5 bg-gray-100 translate-y-1",
+                  <div className={twMerge("w-4 h-0.5 bg-gray-100 translate-y-1 transition duration-300",
                     isMobileMenuOpen && "translate-y-0 -rotate-45"
                   )} />
                 </div>
@@ -91,7 +92,23 @@ export const Header = () => {
       </header>
 
       {isMobileMenuOpen && 
-        <div className="h-full z-30 fixed top-18 left-0 right-0 bottom-0 ">
+        <div className=" fixed top-18 left-0 right-0 bottom-0 z-30 bg-gray-900 overflow-hidden">
+          <div className="absolute-center isolate -z-10">
+           <Orbit className="size-[200px]"/>
+          </div>
+          <div className="absolute-center isolate -z-10">
+           <Orbit className="size-[350px]"/>
+          </div>
+          <div className="absolute-center isolate -z-10">
+           <Orbit className="size-[500px]"/>
+          </div>
+          <div className="absolute-center isolate -z-10">
+           <Orbit className="size-[650px]"/>
+          </div>
+          <div className="absolute-center isolate -z-10">
+           <Orbit className="size-[800px]"/>
+          </div>
+          
           <div className="container h-full">
             <nav className="h-full flex flex-col items-center justify-center gap-4 py-8">
               {navItems.map(({name,href})=>(
