@@ -14,8 +14,10 @@ h1, h2, h3 {
     :root {
         --color-violet-400: #a78bfa;
         --color-fuchsia-400: #e879f9;
+        --color-fuchsia-900: #4b004f;
         --color-amber-300: #fcd34d;
         --color-teal-300: #5eead4;
+        --color-indigo-900: #1A237E;
         --color-gray-950: #111827;
         --font-heading: 'Sora', sans-serif;
         --font-body: 'Space Grotesk', sans-serif;
