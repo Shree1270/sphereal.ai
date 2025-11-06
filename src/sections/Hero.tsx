@@ -1,14 +1,16 @@
 import { Button } from "../components/Button";
 import { Orbit } from "../components/Orbit";
 import { Planets } from "../components/Planets";
+import { SectionBorder } from "../components/SectionBorder";
+import { SectionContent } from "../components/SectionContent";
 // import underLineImage from '../assets/images/underline.svg'
 
 export const Hero = () => {
   return (
-    <section className="pb-[1000px]">
+    <section>
       <div className="container">
-        <div className="border-l border-r border-gray-200/20">
-          <div className="container py-24 md:py-36 lg:py-48 relative isolate overflow-hidden mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+        <SectionBorder>
+          <SectionContent className="relative isolate  mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
             <div className="absolute -z-10 inset-0 bg-[radial-gradient(circle_farthest-corner,var(--color-fuchsia-900)_50%,var(--color-indigo-900)_75%,transparent)] mask-[radial-gradient(circle_farthest-side,black,transparent)]"></div>
             <div className="absolute -z-10 inset-5">
               <div className="absolute-center">
@@ -53,7 +55,7 @@ export const Hero = () => {
                 <Planets size="sm" color="teal" className="-translate-y-[342px] translate-x-[488px] -rotate-135"/>
               </div>
 
-              <div className="absolute z-10 top-[30%] left-0 -translate-x-10">
+              <div className="absolute z-10 top-[30%] left-0 -translate-x-10 hidden lg:block">
                 <div className="bg-gray-800/70 border border-gray-700 rounded-xl backdrop-blur-md p-4 w-72">
                   <div>
                     Can you generate an incredible frontend dev video tutorial?
@@ -62,7 +64,7 @@ export const Hero = () => {
                 </div>
               </div>
 
-              <div className="absolute z-10 top-[50%] right-0 translate-x-10">
+              <div className="absolute z-10 top-[50%] right-0 translate-x-10 hidden lg:block">
                 <div className="bg-gray-800/70 border border-gray-700 rounded-xl backdrop-blur-md p-4 w-72">
                   <div>
                    <strong>Brainwave:</strong> I created one based on videos from Frontend Tribe!
@@ -83,8 +85,8 @@ export const Hero = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </SectionContent>
+        </SectionBorder>
       </div>
     </section>
   )
