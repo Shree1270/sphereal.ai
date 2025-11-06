@@ -10,6 +10,12 @@ h1, h2, h3 {
     font-family: var(--font-heading);
 }
 
+@theme {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1200px;
+}
+
 @layer base{
     :root {
         --color-violet-400: #a78bfa;
@@ -49,10 +55,6 @@ h1, h2, h3 {
             opacity: 1;
         }
     }
-
-    @custom-media --sm (min-width: 640px);
-    @custom-media --md (min-width: 768px);
-    @custom-media --lg (min-width: 1200px);
 
   .container {
     width: 100%;

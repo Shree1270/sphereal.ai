@@ -5,14 +5,14 @@ export const classes = cva("bg-linear-to-b  to-gray-900 rounded-full",{
 
     variants:{
         size : {
-            sm: "",
+            sm: "size-4",
             md: "",
             lg: "size-8",
         },
         color : {
             violet : "from-violet-400",
-            fuchsia: "",
-            teal: "",
+            fuchsia: "from-fuchsia-400",
+            teal: "from-teal-400",
         }
     },
     defaultVariants : {
