@@ -44,7 +44,7 @@ export const Hero = () => {
             </p>
 
             <div className="mt-10 font-semibold text-center">
-              <Button variant="secondary" >Start Chatting</Button>
+              <Button variant="secondary" className="uppercase">Start Chatting</Button>
             </div>
 
             <div className="relative isolate max-w-5xl mx-auto">
