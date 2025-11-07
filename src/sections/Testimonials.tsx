@@ -1,8 +1,11 @@
 import React from "react";
-import AshwinSantiago from "@/assets/images/ashwin-santiago.jpg";
-import AlecWhitten from "@/assets/images/alec-whitten.jpg";
-import ReneWells from "@/assets/images/rene-wells.jpg";
-import MollieHall from "@/assets/images/mollie-hall.jpg";
+import AshwinSantiago from "../assets/images/ashwin-santiago.jpg";
+import AlecWhitten from "../assets/images/alec-whitten.jpg";
+import ReneWells from "../assets/images/rene-wells.jpg";
+import MollieHall from "../assets/images/mollie-hall.jpg";
+import { SectionBorder } from "../components/SectionBorder";
+import { SectionContent } from "../components/SectionContent";
+import Quote from "../assets/images/quote.svg";
 
 export const testimonials = [
   {
@@ -35,8 +38,49 @@ export const testimonials = [
   },
 ];
 
+const SELECTED_TESTIMONAL_INDEX = 0;
+
 export const Testimonials = () => {
-  return <section>testimonials section</section>;
+  return (
+    <section className="pb-[1000px]">
+      <div className="container">
+        <SectionBorder borderTop>
+          <SectionContent>
+            <div className="border-gradient px-6 lg:px-16 lg:py-24 py-16 rounded-3xl flex flex-col md:flex-row items-center gap-9 lg:gap-6 md:gap-3 md:mx-10 md:px-10 lg:mx-20 relative">
+              <img src={Quote} alt="quote" className="size-24 absolute top-0 -translate-y-1/2"/>
+              {testimonials.map((testimonial, index) => (
+                <div key={testimonial.name}>
+
+                  {SELECTED_TESTIMONAL_INDEX === index && (
+                    <blockquote className="flex flex-col lg:flex-row gap-12">
+                      <p className="text-xl md:text-2xl font-medium">{testimonial.quote}</p>
+                      <cite className="not-italic">
+                      <img src={testimonial.image} alt={testimonial.name} className=" rounded-lg"/>
+                      <div className="font-bold mt-3">{testimonial.name}</div>
+                      <div className="text-xs mt-2">{testimonial.title}</div>
+                      </cite>
+                    </blockquote>
+                  )}
+                </div>
+              ))}
+
+              <div className="flex md:flex-col justify-center gap-2 ">
+                {testimonials.map((testimonal, index)=>(
+                  <div key={testimonal.name} className="size-6 relative inline-flex items-center justify-center isolate">
+                    {SELECTED_TESTIMONAL_INDEX === index && (
+
+                      <div className="absolute size-full border-gradient rounded-full -z-10"/>
+                    )}
+                    <div className="size-1.5 rounded-full bg-gray-200 "></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </SectionContent>
+        </SectionBorder>
+      </div>
+    </section>
+  )
 };
 
 export default Testimonials;

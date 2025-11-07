@@ -3,6 +3,7 @@ import Companies from "./sections/Companies"
 import Features from "./sections/Features"
 import Header from "./sections/Header"
 import Hero from "./sections/Hero"
+import Testimonials from "./sections/Testimonials"
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Companies/>
       <Features/>
       <Pricing/>
+      <Testimonials/>
     </div>
     
   )
