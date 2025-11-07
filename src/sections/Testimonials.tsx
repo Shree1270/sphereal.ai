@@ -42,7 +42,7 @@ const SELECTED_TESTIMONAL_INDEX = 0;
 
 export const Testimonials = () => {
   return (
-    <section className="pb-[1000px]">
+    <section>
       <div className="container">
         <SectionBorder borderTop>
           <SectionContent>
