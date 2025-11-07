@@ -1,3 +1,4 @@
+import Pricing from "./sections/Pricing"
 import Companies from "./sections/Companies"
 import Features from "./sections/Features"
 import Header from "./sections/Header"
@@ -14,6 +15,7 @@ function App() {
       <Hero/>
       <Companies/>
       <Features/>
+      <Pricing/>
     </div>
     
   )
