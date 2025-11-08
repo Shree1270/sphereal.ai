@@ -5,6 +5,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+
 export const navItems = [
   {
     name: "Features",
@@ -20,7 +21,7 @@ export const navItems = [
   },
   {
     name: "Login",
-    href: "#login",
+    href: "#",
   },
 ];
 
@@ -51,7 +52,16 @@ export const Footer = () => {
         <div className="font-extrabold text-2xl">sphereal.ai</div>
         <nav className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
           {navItems.map((item)=>(
-            <a href={item.href} key={item.name} className="uppercase text-gray-400 text-xs font-bold tracking-widest">
+            <a href={item.href} key={item.name} 
+            className="uppercase text-gray-400 text-xs font-bold tracking-widest"
+            onClick={(e)=>{
+              e.preventDefault();
+              const element = document.querySelector(item.href);
+              if(element){
+                element.scrollIntoView({behavior: "smooth"})
+              }
+            }}
+            >
               {item.name}
             </a>
           ))}

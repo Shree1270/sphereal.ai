@@ -1,4 +1,3 @@
-import React from "react";
 import AshwinSantiago from "../assets/images/ashwin-santiago.jpg";
 import AlecWhitten from "../assets/images/alec-whitten.jpg";
 import ReneWells from "../assets/images/rene-wells.jpg";
@@ -42,7 +41,7 @@ const SELECTED_TESTIMONAL_INDEX = 0;
 
 export const Testimonials = () => {
   return (
-    <section>
+    <section id="testimonials">
       <div className="container">
         <SectionBorder borderTop>
           <SectionContent>

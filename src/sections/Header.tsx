@@ -55,6 +55,14 @@ export const Header = () => {
                     className={`h-full px-10 text-xs font-bold text-gray-400 uppercase tracking-widest relative inline-flex items-center
               before:content-[''] before:absolute before:h-2 before:w-px before:bg-gray-200/20 before:bottom-0 before:left-0
               last:after:content-[''] last:after:absolute last:after:h-2 last:after:w-px last:after:bg-gray-200/20 last:after:bottom-0 last:after:right-0`}
+                  
+                  onClick={(e)=>{
+              e.preventDefault();
+              const element = document.querySelector(href);
+              if(element){
+                element.scrollIntoView({behavior: "smooth"})
+              }
+            }}
                   >{name}</a>
                 ))}
               </nav>
@@ -112,7 +120,17 @@ export const Header = () => {
           <div className="container h-full">
             <nav className="h-full flex flex-col items-center justify-center gap-4 py-8">
               {navItems.map(({name,href})=>(
-                <a href={href} key={href} className="text-xs font-bold tracking-widest text-gray-400 h-10 uppercase">
+                <a href={href} key={href} 
+                className="text-xs font-bold tracking-widest text-gray-400 h-10 uppercase"
+                onClick={(e)=>{
+              e.preventDefault();
+              const element = document.querySelector(href);
+              if(element){
+                setIsMobileMenuOpen(false);
+                element.scrollIntoView({behavior: "smooth"})
+              }
+            }}
+                >
                   {name}
                 </a>
               ))}
