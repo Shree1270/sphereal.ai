@@ -6,7 +6,7 @@ export const classes = cva("bg-linear-to-b  to-gray-900 rounded-full",{
     variants:{
         size : {
             sm: "size-4",
-            md: "",
+            md: "size-6",
             lg: "size-8",
         },
         color : {

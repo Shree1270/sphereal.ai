@@ -47,7 +47,7 @@ export const Testimonials = () => {
         <SectionBorder borderTop>
           <SectionContent>
             <div className="border-gradient px-6 lg:px-16 lg:py-24 py-16 rounded-3xl flex flex-col md:flex-row items-center gap-9 lg:gap-6 md:gap-3 md:mx-10 md:px-10 lg:mx-20 relative">
-              <img src={Quote} alt="quote" className="size-24 absolute top-0 -translate-y-1/2"/>
+              <img src={Quote} alt="quote" className="size-24 absolute top-0 left-6 md:left-10 lg:left-16 -translate-y-1/2 rotate-180"/>
               {testimonials.map((testimonial, index) => (
                 <div key={testimonial.name}>
 
