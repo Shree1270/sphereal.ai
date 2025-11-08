@@ -5,6 +5,7 @@ import Header from "./sections/Header"
 import Hero from "./sections/Hero"
 import Testimonials from "./sections/Testimonials"
 import CallToAction from "./sections/CallToAction"
+import Footer from "./sections/Footer"
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Pricing/>
       <Testimonials/>
       <CallToAction/>
+      <Footer/>
     </div>
     
   )
