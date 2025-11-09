@@ -11,6 +11,7 @@ import { SectionContent } from "../components/SectionContent";
 import { Button } from "../components/Button";
 import { Orbit } from "../components/Orbit";
 import { CheckCircle2 } from "lucide-react";
+import { motion } from "motion/react";
 
 export const features = [
   "Effortless integration",
@@ -97,19 +98,73 @@ export const Features = () => {
 
                   {logos.map(({ src, alt, rotate }) => (
 
-                    <div key={alt} className={`size-full absolute inset-0`}
-                      style={{
-                        transform: `rotate(${rotate}deg)`,
+                    <motion.div key={alt} className={`size-full absolute inset-0`}
+                      // style={{
+                      //   transform: `rotate(${rotate}deg)`,
+                      // }}
+                      initial = {{rotate : rotate}}
+                      animate = {{
+                        rotate: [
+                          rotate,
+                          rotate + 45,
+                          rotate + 45,
+                          rotate + 90,
+                          rotate + 90,
+                          rotate + 135,
+                          rotate + 135,
+                          rotate + 180,
+                          rotate + 180,
+                          rotate + 225,
+                          rotate + 225,
+                          rotate + 270,
+                          rotate + 270,
+                          rotate + 315,
+                          rotate + 315,
+                          rotate + 360,
+                          rotate + 360,
+                        ]
+                      }}
+                      transition={{
+                        duration: 10,
+                        repeat: Infinity
                       }}
                     >
-                      <div className={` size-10 md:size-14 inline-flex items-center justify-center border border-gray-200/20 bg-gray-900 rounded-lg absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2`}
-                        style={{
-                          transform: ` rotate(-${rotate}deg)`,
+                      <motion.div className={` size-10 md:size-14 inline-flex items-center justify-center border border-gray-200/20 bg-gray-900 rounded-lg absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2`}
+                        // style={{
+                        //   transform: ` rotate(-${rotate}deg)`,
+                        // }}
+                        initial = {{
+                          rotate: -rotate
                         }}
+                        animate = {{
+                        rotate: [
+                          -rotate,
+                          -rotate - 45,
+                          -rotate - 45,
+                          -rotate - 90,
+                          -rotate - 90,
+                          -rotate - 135,
+                          -rotate - 135,
+                          -rotate - 180,
+                          -rotate - 180,
+                          -rotate - 225,
+                          -rotate - 225,
+                          -rotate - 270,
+                          -rotate - 270,
+                          -rotate - 315,
+                          -rotate - 315,
+                          -rotate - 360,
+                          -rotate - 360,
+                        ]
+                      }}
+                      transition={{
+                        duration: 10,
+                        repeat: Infinity
+                      }}
                       >
                         <img src={src} alt={alt} className="size-6 md:size-9" />
-                      </div>
-                    </div>
+                      </motion.div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
