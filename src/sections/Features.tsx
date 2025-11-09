@@ -79,7 +79,7 @@ export const Features = () => {
                     </li>
                   ))}
                 </ul>
-                <Button className="mt-16 uppercase">Try it now</Button>
+                <Button variant="primary" className="mt-16 uppercase">Try it now</Button>
               </div>
 
               <div className="flex justify-center shrink-0">
