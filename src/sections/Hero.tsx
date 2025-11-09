@@ -4,7 +4,7 @@ import { Orbit } from "../components/Orbit";
 import { Planets } from "../components/Planets";
 import { SectionBorder } from "../components/SectionBorder";
 import { SectionContent } from "../components/SectionContent";
-import { motion, useMotionValue, useMotionValueEvent, useScroll, useSpring, useTransform } from "motion/react";
+import { motion, useMotionValue, useScroll, useSpring, useTransform } from "motion/react";
 // import underLineImage from '../assets/images/underline.svg'
 
 export const useMousePosition =() =>{
