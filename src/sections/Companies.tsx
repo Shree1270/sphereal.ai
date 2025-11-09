@@ -6,6 +6,7 @@ import OutsideLogo from "../assets/images/outside-logo.svg";
 import CelestialLogo from "../assets/images/celestial-logo.svg";
 import { SectionBorder } from "../components/SectionBorder";
 import { SectionContent } from "../components/SectionContent";
+import { motion } from "motion/react";
 
 export const companies = [
   {
@@ -42,13 +43,21 @@ export const Companies = () => {
           <SectionContent className="pt-0!">
             <h2 className="text-center text-xs text-gray-500 font-bold uppercase tracking-widest">Empowering creators with leading companies</h2>
             <div className="flex mt-20 overflow-x-clip -mx-4 ">
-              <div className="flex flex-none  gap-18 md:gap-36 px-18">
-                {companies.map(({ logo, name }) => (
-                  <div key={name}>
-                    <img src={logo} alt={name} className="h-8" />
+              <motion.div 
+              initial= {{ x:0 }}
+                animate = {{ x:"-50%"}}
+                transition={{
+                  repeat : Infinity,
+                  duration : 10,
+                  ease : 'linear'
+                }}
+              className="flex flex-none  gap-18 md:gap-36 px-9 md:px-18">
+                {[...companies, ...companies].map(({ logo }, arrIndex) => (
+                  <div key={arrIndex}>
+                    <img src={logo}  className="h-8" />
                   </div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </SectionContent>
         </SectionBorder>
