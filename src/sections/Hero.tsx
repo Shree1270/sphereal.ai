@@ -5,6 +5,8 @@ import { Planets } from "../components/Planets";
 import { SectionBorder } from "../components/SectionBorder";
 import { SectionContent } from "../components/SectionContent";
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from "motion/react";
+import Robot from '../assets/images/robot.jpg';
+import Loader from '../assets/images/loader-animated.svg'
 // import underLineImage from '../assets/images/underline.svg'
 
 export const useMousePosition =() =>{
@@ -159,10 +161,10 @@ export const Hero = () => {
               </div>
             
             <div className="mt-20 rounded-2xl border-2 overflow-hidden border-gradient relative flex">
-              <img src="src/assets/images/robot.jpg" alt="robot-img" />
+              <img src={Robot} alt="robot-img" />
               <div className="absolute bottom-2 md:bottom-4 lg:bottom-10 left-1/2 -translate-x-1/2 w-xs px-[15px]">
                 <div className="flex items-center gap-4 px-4 py-2 bg-gray-900/80 rounded-2xl w-[320px] max-w-full">
-                  <img src="src/assets/images/loader-animated.svg" alt="loader" className="text-red-400 text-xl"/>
+                  <img src={Loader} alt="loader" className="text-red-400 text-xl"/>
                   <div className="text-xl font-semibold text-gray-100">
                     AI is generating<span className="cursor-blink">|</span>
                   </div>
