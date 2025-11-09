@@ -7,7 +7,7 @@ import { SectionContent } from "../components/SectionContent";
 import { motion, useMotionValue, useMotionValueEvent, useScroll, useSpring, useTransform } from "motion/react";
 // import underLineImage from '../assets/images/underline.svg'
 
-const useMousePosition =() =>{
+export const useMousePosition =() =>{
   const [innerWidth, setInnerWidth] = useState(1);
   const [innerHeight, setInnerHeight] = useState(1);
   const clientX = useMotionValue(0);

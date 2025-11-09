@@ -1,10 +1,26 @@
+import { useSpring, motion, useTransform } from "motion/react";
 import { Button } from "../components/Button";
 import { Orbit } from "../components/Orbit";
 import { Planets } from "../components/Planets";
 import { SectionBorder } from "../components/SectionBorder";
 import { SectionContent } from "../components/SectionContent";
+import { useMousePosition } from "./Hero";
 
 export const CallToAction = () => {
+  const {xProgress, yProgress} = useMousePosition();
+
+    const springX = useSpring(xProgress);
+    const springY = useSpring(yProgress);
+  
+    const translateLargeX = useTransform(springX, [0,1], ['-25%', '25%']);
+    const translateLargeY = useTransform(springY, [0,1], ['-25%', '25%']);
+  
+    const translateMediumX = useTransform(springX, [0,1], ['-50%', '50%']);
+    const translateMediumY = useTransform(springY, [0,1], ['-50%', '50%']);
+  
+    const translateSmallX = useTransform(springX, [0,1], ['-200%', '200%']);
+    const translateSmallY = useTransform(springY, [0,1], ['-200%', '200%']);
+  
   return (
   <section>
     <div className="container">
@@ -20,46 +36,78 @@ export const CallToAction = () => {
           </div>
 
           <div className="absolute-center -z-10">
+            <motion.div style={{
+              x: translateLargeX,
+              y: translateLargeY
+            }}>
             <Planets
               size="lg"
               color="violet"
               className="translate-y-[200px] -translate-x-[200px] rotate-45"
             />
+            </motion.div>
           </div>
           <div className="absolute-center -z-10">
+            <motion.div style={{
+              x: translateLargeX,
+              y: translateLargeY
+            }}>
             <Planets
               size="lg"
               color="violet"
               className="translate-x-[200px] -translate-y-[200px] -rotate-135"
             />
+            </motion.div>
           </div>
+
           <div className="absolute-center -z-10">
+            <motion.div style={{
+              x: translateMediumX,
+              y: translateMediumY
+            }}>
             <Planets
               size="md"
               color="teal"
               className="-translate-x-[500px]  rotate-90"
             />
+            </motion.div>
           </div>
           <div className="absolute-center -z-10">
+            <motion.div style={{
+              x: translateMediumX,
+              y: translateMediumY
+            }}>
             <Planets
               size="md"
               color="teal"
               className="translate-x-[500px] -translate-y-[100px] -rotate-135"
             />
+            </motion.div>
           </div>
+
           <div className="absolute-center -z-10">
+            <motion.div style={{
+              x: translateSmallX,
+              y: translateSmallY
+            }}>
             <Planets
               size="sm"
               color="fuchsia"
               className="-translate-x-[400px] -translate-y-[250px] rotate-135"
             />
+            </motion.div>
           </div>
           <div className="absolute-center -z-10">
+             <motion.div style={{
+              x: translateSmallX,
+              y: translateSmallY
+            }}>
             <Planets
               size="sm"
               color="fuchsia"
               className="translate-x-[400px] translate-y-[150px] -rotate-45"
             />
+            </motion.div>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl max-w-3xl mx-auto font-semibold text-gray-200 leading-tight text-center">
             Join the AI Revolution with Sphereal
